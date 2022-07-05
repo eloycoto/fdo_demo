@@ -1,19 +1,31 @@
 # FDO demo with Flotta
 
-# Prerequisites:
 
+# Introduction
+
+Fido device onboard is somehting that RedHat is working on, here is an example
+of how to get it working with project-flotta.
+
+Video:
+https://drive.google.com/file/d/1oEGejvHPCu3dFu0aWGIyRA4XZplw6dnE/view?usp=sharing
+
+And some videos that will add context to the FDO:
+
+- Explanation by Patrick Uiterwijk [here](https://www.youtube.com/watch?v=owXuVjn5If8&ab_channel=PatrickUiterwijk)
+- RedHat enterprise Linux Demo [here](https://www.youtube.com/watch?v=_nq5IAVbl2Y&ab_channel=RedHatEnterpriseLinux)
+
+# Prerequisites:
 
 - RHEL 9.0 linux already subscribed
 
 ```
-
 dnf copr enable @osbuild/osbuild-composer -y
 dnf copr enable @osbuild/osbuild -y
 dnf install -y qemu-kvm libvirt  osbuild-* weldr-client
 systemctl enable libvirtd
 ```
 
-# Create RPMOstre REPO
+# Create RPM Ostree REPO
 
 Initialize the blueprint:
 
@@ -160,4 +172,3 @@ And let's wait until the device shows at the kubernetes cluster:
 ```
 kubectl get edgedevice
 ```
-
